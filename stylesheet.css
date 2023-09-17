@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: system-ui;
 }
 
 h1,h2,h3,h4,h5,h6,a,p {
@@ -16,26 +16,33 @@ header {
     width: 100%;
     background-color: #507da977;
     position: fixed;
+    display: flex;
 }
 
 main>div#Top {
     background-image: url("./Background.png");
     background-repeat: repeat-x;
+    
+    background-position-y: 100%;
 }
 
-main {
+html {
     background-image: url("./Dirt_Bg.png");
 }
 
-main>*:not(#Top),footer>* {
-    display: block;
+main>*:not(#Top,.image_and_text),footer>*,main>*>* {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 50%;
+    display: block;
+    width: 75%;
 }
 
-main>img,main>video,main>iframe {
+footer>* {
+    width: 80%;
+}
+
+main>img,main>div.image_and_text>img,main>video,main>iframe {
     border-radius: 5%;
     border-style: solid;
     border-width: 10px;
@@ -50,14 +57,12 @@ main>a,main>p,main>h1,main>h2,main>h3,main>h4,main>h5,main>h6 {
     padding-bottom: 15px;
 }
 
-main>a, main>p {
+main>a, main>p, main>*>a, main>*>p {
     font-size: 25px;
 }
 
 footer {
     padding-top: 15px;
-    background-image: url("./Dirt_Bg.png");
-    background-blend-mode: overlay;
     padding-bottom: 15px;
 }
 
@@ -81,6 +86,7 @@ footer>a {
 .main-logo {
     height: 140px;
     padding: 200px 0px 200px 0px;
+    color:#555758;
 }
 
 .download {
@@ -94,6 +100,7 @@ footer>a {
     cursor: pointer;
     box-shadow: 0px 12.5px 0px #c0c0c0;
     margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .download:active {
@@ -114,9 +121,41 @@ div.below-download {
     padding-bottom: 150px;
 }
 
+.space {
+    padding-bottom: 100px;
+}
+
+div#Top>p, div#Top>a {
+    text-shadow: 1px 1px 2px black;
+}
+
+div.image_and_text {
+    display: flex;
+    width: 75%;
+}
+
+div.image_and_text>img {
+    width: 40%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+div.image_and_text>p {
+    width: 40%;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 30px;
+}
+
 .center-align {
     display: block;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+}
+
+iframe#Embed_Game {
+    height: 580px;
+    width: 670px;
+    border-radius: 50px;
 }
